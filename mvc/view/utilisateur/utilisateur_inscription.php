@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
-<?php require "../template/en-tete.html"?>
+
+<?php require "../mvc/view/template/en-tete.html"?>
+
 <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">

@@ -5,11 +5,20 @@ namespace controller;
 class Usager_controller
 {
 
+    function index(){
+            include '../mvc/view/accueil.php';
+        }
+
 
     function login(){
-       // if (isset($_POST["username"]))
-        var_dump($_POST["username"]);
 
+
+        include '../mvc/view/utilisateur/utilisateur_connexion.php';
+
+    }
+
+    function inscription() {
+        include '../mvc/view/utilisateur/utilisateur_inscription.php';
     }
 
 
