@@ -33,7 +33,7 @@
             </form>
         </div>
         <div class="col-md-8 col-lg-7 col-xl-6">
-            <img src="../../../public_html/images/garfield_register.png" alt="garfield et ses amis" class="img-fluid">
+            <img src="images/garfield_register.png" alt="garfield et ses amis" class="img-fluid">
         </div>
     </div>
 </div>
