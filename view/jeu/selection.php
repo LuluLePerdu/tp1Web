@@ -23,6 +23,8 @@
             <h2>Personnages disponibles</h2>
         </div>
 
+
+
     </div>
 </body>
 </html>

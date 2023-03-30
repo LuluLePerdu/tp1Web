@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php require 'template/en-tete.html'?>
+<?php require 'template/en-tete.html' ?>
 
 <div class="container-fluid">
     <div class="row justify-content-md-center bg-secondary mx-5 my-5 rounded p-5 text-light">
@@ -17,9 +17,9 @@
             <p class="text-center">Description du jeu en bref :)</p>
         </div>
         <div class="btn-group">
-            <a href="index.php?controller=Usager_controller&action=connexion" class="btn btn-primary btn-lg"> Connexion</a>
+            <a href="/Usager/connexion" class="btn btn-primary btn-lg"> Connexion</a>
 
-            <a href="index.php?controller=Usager_controller&action=inscription" class="btn btn-warning btn-lg"> Inscription</a>
+            <a href="Usager/inscription" class="btn btn-warning btn-lg"> Inscription</a>
         </div>
     </div>
     <div>

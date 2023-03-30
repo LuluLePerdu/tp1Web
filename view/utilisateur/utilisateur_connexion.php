@@ -8,30 +8,36 @@
 </head>
 <body>
 
-<?php require "../mvc/view/template/en-tete.html"?>
+<?php require "../view/template/en-tete.html"?>
 
 <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">
         <div class="col-md-8 col-lg-7 col-xl-6">
-            <img src="images/garfield_login.png" alt="garfield etendue" class="img-fluid">
+            <img src="/images/garfield_login.png" alt="garfield etendue" class="img-fluid">
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form method="post" action="index.php?controller=Usager_controller&action=connexion">
 
-                <!--Utilisateur-->
+            <form method="post">
+
                 <div class="form-outline mb-4">
                     <label class="form-label" for="utilisateur">Utilisateur</label>
-                    <input type="text" id="utilisateur" name="utilisateur" class="form-control form-control-lg">
+                    <input type="text"  name="utilisateur" id="utilisateur" class="form-control form-control-lg">
                 </div>
 
-                <!--MDP-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="mdp">Mot de passe</label>
                     <input type="password" id="mdp" name="mdp" class="form-control form-control-lg">
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Connexion</button>
 
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="connexion">Connexion</button>
             </form>
+            <?php if (!empty($message)) { ?>
+                    <div class="alert alert-warning">
+                        <p class="my-4 text-rose-500 red" >
+                            <?= $message ?>
+                        </p>
+                    </div>
+            <?php } ?>
         </div>
     </div>
 </div>

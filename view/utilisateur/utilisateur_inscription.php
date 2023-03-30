@@ -8,32 +8,41 @@
 </head>
 <body>
 
-<?php require "../mvc/view/template/en-tete.html"?>
+<?php require "../view/template/en-tete.html"?>
 
 <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form>
+            <form method="post">
                 <!--Utilisateur-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Nom d'utilisateur</label>
-                    <input type="text" id="" class="form-control form-control-lg">
+                    <input type="text" id="utilisateur" name="utilisateur" class="form-control form-control-lg">
                 </div>
 
                 <!--MDP-->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Mot de passe</label>
-                    <input type="password" class="form-control form-control-lg">
+                    <input type="password" id="mdp" name="mdp" class="form-control form-control-lg">
                 </div>
                 <div class="form-outline mb-4">
                     <label class="form-label" for="">Confirmation du mot de passe</label>
-                    <input type="password" class="form-control form-control-lg">
+                    <input type="password" id="confirmation" name="confirmation" class="form-control form-control-lg">
                 </div>
+
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Créer son compte</button>
             </form>
+
         </div>
+        <?php if (!empty($message)) { ?>
+            <div class="alert alert-warning">
+                <p class="my-4 text-rose-500 red" >
+                    <?= $message ?>
+                </p>
+            </div>
+        <?php } ?>
         <div class="col-md-8 col-lg-7 col-xl-6">
-            <img src="images/garfield_register.png" alt="garfield et ses amis" class="img-fluid">
+            <img src="/images/garfield_register.png" alt="garfield et ses amis" class="img-fluid">
         </div>
     </div>
 </div>
