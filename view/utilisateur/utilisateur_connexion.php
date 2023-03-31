@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php require "../view/template/en-tete.html"?>
+<?php require "../view/template/en-tete.php"?>
 
 <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">

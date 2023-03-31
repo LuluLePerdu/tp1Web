@@ -1,8 +1,8 @@
 <?php
 
-namespace controller;
+namespace Controller;
 
-class api_controller
+class Api_controller
 {
     public function attaque():void{
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace controller;
+namespace Controller;
 
-class jeu_controller
+class Jeu_controller
 {
     function selection():void{
-        include '../view/jeu/selection.php';
+        require_once __DIR__ . '/../view/jeu/selection.php';
     }
 
     public function demarrerPartie():void{

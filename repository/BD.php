@@ -1,6 +1,6 @@
 <?php
 
-namespace repository;
+namespace Repository;
 use PDO;
 class BD
 {

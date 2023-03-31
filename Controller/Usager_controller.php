@@ -1,9 +1,9 @@
 <?php
 
-namespace controller;
+namespace Controller;
 
-use model\Utilisateur;
-use repository\UtilisateurRepo;
+use Model\Utilisateur;
+use Repository\UtilisateurRepo;
 
 class Usager_controller
 {
@@ -25,15 +25,16 @@ class Usager_controller
         $confirmation = $_POST['confirmation'];
 
         if (empty($nomUtilisateur) || empty($mdpUtilisateur) || empty($confirmation)){
-            return "Champs non remplis";
+            return "Veuiller remplir tous les champs";
+        }
+        $utilisateurRepo = new UtilisateurRepo();
+        $utilisateur = $utilisateurRepo->getParNom($nomUtilisateur);
+        if ($utilisateur){
+            return "Ce nome est déjà pris";
         }
 
-        $utilisateurRepo = new UtilisateurRepo();
-        if ($utilisateurRepo->getParNom($nomUtilisateur)){
-            return "Nom d'utilisateur déjà exisatnt";
-        }
         if ($mdpUtilisateur != $confirmation){
-            return "Le mdp et la confirmation sont différents";
+            return "Les mots de passe sont divergeants";
         }
 
         $utilisateur = new Utilisateur();
@@ -49,28 +50,33 @@ class Usager_controller
         if (isset($_POST['utilisateur']) && isset($_POST['mdp'])){
             $message = $this->verifConnexion();
         }
+
         require_once __DIR__ . '/../view/utilisateur/utilisateur_connexion.php';
+
     }
-    public function verifConnexion():string{
+    private function verifConnexion():string{
         $nomUtilisateur = $_POST['utilisateur'];
         $mdpUtilisateur = $_POST['mdp'];
 
         if (empty($nomUtilisateur) || empty($mdpUtilisateur)){
-            return "Champs non valide pour l'utilisateur/mdp";
+            return "Champs manquants";
         }
 
         $utilisateurRepo = new UtilisateurRepo();
         $utilisateur = $utilisateurRepo->getParNom($nomUtilisateur);
-        if ($utilisateur){
-            if (password_verify($mdpUtilisateur,$utilisateur->motDePasse)){
-                $_SESSION['utilisateur'] = $utilisateur;
-            }
+
+        if ($utilisateur) {
+            if (password_verify($mdpUtilisateur, $utilisateur->mdp)) {
+                $_SESSION['joueur'] = true;
+                header('Location: /../Jeu/selection');
+            } else
+                return "Mot de passe non valide";
         }
         exit();
     }
     public function deconnexion(){
-        unset($_SESSION['utilisateur']);
-        header('Location: ..');
+        unset($_SESSION['joueur']);
+        header('Location: accueil');
         die();
     }
 }

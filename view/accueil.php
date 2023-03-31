@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php require 'template/en-tete.html' ?>
+<?php require 'template/en-tete.php' ?>
 
 <div class="container-fluid">
     <div class="row justify-content-md-center bg-secondary mx-5 my-5 rounded p-5 text-light">
@@ -25,6 +25,7 @@
     <div>
         image VS image
     </div>
+
 </div>
 </body>
 </html>

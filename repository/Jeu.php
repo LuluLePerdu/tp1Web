@@ -1,8 +1,8 @@
 <?php
 
-namespace repository;
+namespace Repository;
 
-use model\Monstre;
+use Model\Monstre;
 use PDO;
 
 class Jeu
